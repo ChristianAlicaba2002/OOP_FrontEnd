@@ -6,7 +6,7 @@ const MainPage = () => {
   return (
     <div>
         <h1>Main Page</h1>
-        <Link href='/Application/Layouts' >Go back</Link>
+        <Link className='MainPage-link' href='/Application/Layouts' >Go back</Link>
     </div>
   )
 }

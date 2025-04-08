@@ -6,7 +6,7 @@ function LadingPage() {
   return (
     <div>
         <h1>Landing Page</h1>
-        <Link href='/Application/Pages/MainPage'>View more</Link>
+        <Link className='landing-link' href='/Application/Pages/MainPage'>View more</Link>
     </div>
   )
 }
