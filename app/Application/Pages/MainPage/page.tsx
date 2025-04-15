@@ -113,6 +113,9 @@ const MainPage = () => {
           </div>
         </div>
 
+        <div id="statistics" className="page-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, adipisci necessitatibus fugiat rem distinctio enim! Vitae doloribus reiciendis, nulla vero natus, ut velit doloremque voluptates nisi quos assumenda cupiditate laudantium?</p>
+        </div>
 
         <div id="location" className="page-content"></div>
       </div>

@@ -12,6 +12,7 @@ body {
     display: flex;
     width: 100%;
     position: relative;
+    
 }
 
 .background-logo {
@@ -40,9 +41,8 @@ body {
 }
 
 .sidebar {
-    margin: 2rem;
-    padding: 0;
-    background-color: #ffffff;
+    margin-left: 2rem;
+    margin-top: 2rem;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -52,15 +52,22 @@ body {
     height: 90%;
     border-radius: 20px;
     flex-flow: column;
-    transition: width 0.3s ease, background-color 0.3s ease;
+    transition: width 0.8s ease, background-color 1s ease;
     overflow: hidden;
     position: sticky;
-    top: 0;
+    background-color: white;
+
 }
 
 .sidebar:hover {
     width: 180px;
-    background-color: #f9f9f9;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 1rem;
+    padding-left: 1rem;
+    background-color: rgba(189, 135, 135, 0.123);
+
+
 }
 
 .sidebar-nav {
@@ -70,36 +77,40 @@ body {
 
 .nav-link {
     margin-top: 2.5rem;
-    padding: 15px 20px;
+    padding: 15px 25px;
     color: #333;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: background-color 0.3s ease;
-    white-space: nowrap;
+    transition: background-color 0.8s ease;
+    width: 150px;
+    border: 1px solid white;
+    border-radius: 50px;
 }
 
 .nav-link:hover {
-    border: 1px solid #9B6969;
+    border: 1px solid white;
     border-radius: 50px;
-    background-color: #976262e7;
+    background-color: #97626296;
     color: white;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    padding-left: 20px;
+    padding-right: 30px;
+    display: inline-flex;
+    
 }
 
 .nav-icon {
     width: 28px;
     height: 28px;
-    transition: transform 0.2s ease;
+    transition: transform 0.6s ease;
 }
 
-.nav-link:hover .nav-icon {
+ .nav-icon:hover{
     border: 1px solid #ffffff;
     border-radius: 50px;
     background-color: #ffffff;
-    transform: scale(1.1);
+    transform: scale(1.5);
 }
 
 .logout-link {
