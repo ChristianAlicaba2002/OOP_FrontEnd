@@ -1,8 +1,29 @@
-import React from 'react';
+'use client'
+import React , {useEffect , useState} from 'react';
 import './MainPageStyle/MainPage.css';
 import Link from 'next/link';
 
+
+type Items = {
+  id: number;
+  title: string;
+  Description: string;
+  Sizez:{ 
+    size: string,
+    price: number
+  }
+  setting:{
+    setting: string;
+    price: number
+  }
+  image: string;
+}
+
+
+
+
 const MainPage = () => {
+
   return (
     <div className="dashboard-container">
       <div className="background-logo">
@@ -11,24 +32,23 @@ const MainPage = () => {
 
       <div className="sidebar">
         <nav className="sidebar-nav">
-          <a href="#home" className="nav-link">
+          <Link href="/Application/Layouts" className="nav-link">
             <img src="/img/oop_home.png" alt="Home" className="nav-icon" />
             <span className="nav-text">Home</span>
-          </a>
-          <a href="#statistics" className="nav-link">
+          </Link>
+          <Link href="#statistics" className="nav-link">
             <img src="/img/oop_statistic.png" alt="Statistics" className="nav-icon" />
             <span className="nav-text">Statistics</span>
-          </a>
-          <a href="#location" className="nav-link">
+          </Link>
+          <Link href="#location" className="nav-link">
             <img src="/img/oop_location.png" alt="Location" className="nav-icon" />
             <span className="nav-text">Location</span>
-          </a>
+          </Link>
         </nav>
         <div className="sidebar-bottom">
-          <Link href="/logout" className="logout-link">
+          <button type='submit' className="logout-link cursor-pointer">
             <img src="/img/oop_logout.png" alt="logout icon" />
-            <span className="nav-text">Log Out</span>
-          </Link>
+          </button>
         </div>
       </div>
 
@@ -84,6 +104,7 @@ const MainPage = () => {
                   <p className="card-prize">$180</p>
                 </div>
               </div>
+        
             </div>
             <div className="big-card">
               <img src="/img/Drinks.png" alt="Big Item" className="card-image big-image" />
@@ -92,7 +113,6 @@ const MainPage = () => {
           </div>
         </div>
 
-        <div id="statistics" className="page-content"></div>
 
         <div id="location" className="page-content"></div>
       </div>
