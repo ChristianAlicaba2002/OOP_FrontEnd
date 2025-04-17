@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./LandingPageStyle/landingPage.css";
 import { TProductProps } from "@/app/Types/AllTypes";
 import Image from "next/image";
+import Link from "next/link";
 
 function LandingPage() {
   const [product, setProduct] = useState<TProductProps[]>([]);
@@ -66,7 +67,9 @@ function LandingPage() {
                 <h3>{product.Item_Name}</h3>
                 <p>{product.Description}</p>
                 <p className="price">&#8369;{product.Unit_Price}</p>
+                <Link href={`/Application/Pages/ProductDetails/${product.Itemcode}`} className="view-more">View more</Link>
               </div>
+             
             );
           })}
         </div>
