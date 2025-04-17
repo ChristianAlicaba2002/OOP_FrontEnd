@@ -1,14 +1,378 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    height: 100vh;
     background-color: white;
 }
-h1{
-    font-size: 5rem;
-    font-weight: 700;
-    color: black;
-    text-align: center;
+
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+    
 }
-.MainPage-link{
-    padding: 2rem;
-    background-color: red;
-    border-radius: 10px;
+
+.background-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/oop_logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.background-logo img {
+    display: none;
+}
+
+.welcome-header {
+    font-size: 3em;
+    font-weight: bolder;
+    font-family: 'Playfair Display', serif;
+    color: #9B6969;
+}
+
+.sidebar {
+    margin-left: 2rem;
+    margin-top: 2rem;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid #9B6969;
+    width: 80px;
+    height: 90%;
+    border-radius: 20px;
+    flex-flow: column;
+    transition: width 0.8s ease, background-color 1s ease;
+    overflow: hidden;
+    position: sticky;
+    background-color: white;
+
+}
+
+.sidebar:hover {
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 1rem;
+    padding-left: 1rem;
+    background-color: rgba(189, 135, 135, 0.123);
+
+
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-link {
+    margin-top: 2.5rem;
+    padding: 15px 25px;
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.8s ease;
+    width: 150px;
+    border: 1px solid white;
+    border-radius: 50px;
+}
+
+.nav-link:hover {
+    border: 1px solid white;
+    border-radius: 50px;
+    background-color: #97626296;
+    color: white;
+    padding-left: 20px;
+    padding-right: 30px;
+    display: inline-flex;
+    
+}
+
+.nav-icon {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.6s ease;
+}
+
+ .nav-icon:hover{
+    border: 1px solid #ffffff;
+    border-radius: 50px;
+    background-color: #ffffff;
+    transform: scale(1.5);
+}
+
+.logout-link {
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.logout-link img {
+    width: 40px;
+    height: 40px;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    transition: transform 0.2s ease;
+}
+
+.logout-link:hover img {
+    transform: scale(1.1);
+}
+
+.logout-link:hover {
+    background-color: none;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    position: relative;
+}
+
+.user-profile {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-icon {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s ease;
+}
+
+.user-profile:hover .user-icon {
+    transform: scale(1.1);
+}
+
+.user-options a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #9B6969;
+    transition: color 0.3s ease;
+}
+
+.user-options a:hover {
+    color: #664444;
+    text-decoration: underline;
+}
+
+.homepage-content {
+    margin-top: 80px;
+}
+
+.home-page {
+    padding: 20px;
+}
+
+.home-page h2 {
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.small-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 40%;
+}
+
+.small-card {
+    padding: 5px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(40% - 50px);
+    box-sizing: border-box;
+}
+
+.big-card {
+    padding: 80px;
+    width: 30%;
+}
+
+.card-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.big-image {
+    width: 100%;
+    max-height: 400px;
+}
+
+.card-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-prize {
+    color: #9B6969;
+}
+
+.big-name {
+    font-size: 1.5em;
+}
+
+.big-prize {
+    font-size: 1.2em;
+}
+
+.floating-card {
+    animation: smoothFloat 3s ease-in-out infinite;
+}
+
+@keyframes smoothFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.page-content {
+    padding: 20px;
+}
+
+.page-content h1 {
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    color: #9B6969;
+    font-weight: bold;
+}
+
+.user-options {
+    display: none;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 65px;
+    right: 0;
+}
+
+.user-profile:hover .user-options {
+    display: block;
+}
+
+.nav-text {
+    display: none;
+}
+
+.sidebar:hover .nav-text {
+    display: inline;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+
+.small-card, .big-card {
+    opacity: 1;
+    animation: smoothFloat 3s ease-in-out infinite;
+}
+
+.small-card:nth-child(1) { animation-delay: 0.2s; }
+.small-card:nth-child(2) { animation-delay: 0.4s; }
+.small-card:nth-child(3) { animation-delay: 0.6s; }
+.small-card:nth-child(4) { animation-delay: 0.8s; }
+.small-card:nth-child(5) { animation-delay: 1s; }
+
+.big-card { animation-delay: 1.5s; }
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+        height: auto;
+        flex-direction: row;
+        margin: 1rem;
+        position: static;
+    }
+
+    .sidebar:hover {
+        width: 100%;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .nav-link {
+        margin-top: 0;
+        padding: 10px;
+    }
+
+    .nav-text {
+        display: none;
+    }
+
+    .sidebar:hover .nav-text {
+        display: inline;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .small-cards {
+        width: 100%;
+    }
+
+    .small-card {
+        width: calc(50% - 10px);
+    }
+
+    .big-card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .user-profile {
+        position: static;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .user-options {
+        position: static;
+        width: 100%;
+        text-align: right;
+    }
 }
