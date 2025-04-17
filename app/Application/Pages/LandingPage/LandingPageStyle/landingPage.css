@@ -168,7 +168,7 @@ body,html {
   border: #ff77b2 dashed 1px;
 }
 
-.card img {
+.card .img {
   width: 40%;
   height: auto;
   position: absolute;
@@ -178,7 +178,7 @@ body,html {
   transition: transform 0.3s ease;
 }
 
-.card:hover img {
+.card:hover .img {
   transform: translateX(-50%) scale(1.15) rotate(2deg);
 }
 
