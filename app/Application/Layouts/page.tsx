@@ -1,5 +1,5 @@
 import React from 'react'
-import LadingPage from '../Pages/LandingPage/landing'
+import LandingPage from '../Pages/LandingPage/landing'
 
 const HomePage = () => {
 
@@ -7,7 +7,7 @@ const HomePage = () => {
 
   return (
     <div>
-         <LadingPage />
+         <LandingPage />
     </div>
   )
 }
